@@ -76,15 +76,38 @@ trainer.train()
 # --- Test ---
 prompt = "Explain black hole entropy in simple terms."
 inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-outputs = model.generate(**inputs, max_new_tokens=100)
+outputs = model.generate(**inputs, max_new_tokens=500)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 """
-Example output: 
+1. max_new_tokens=100
 
 ## Step 1: Define entropy
 Entropy is a measure of disorder or randomness in a system. In thermodynamics, entropy is used to quantify the amount of thermal energy unavailable to do work in a system.
 
 ## Step 2: Introduce black hole entropy
 Black hole entropy is a concept introduced by Stephen Hawking in the 1970s. It is a measure of the disorder or randomness in a black hole, which is a region of spacetime with such intense gravitational pull that not
+"""
+
+"""
+2. max_new_tokens=500
+
+Explain black hole entropy in simple terms. 
+
+## Step 1: Define entropy
+Entropy is a measure of disorder or randomness in a system.
+
+## Step 2: Explain black hole entropy
+In a black hole, the entropy is proportional to the surface area of the event horizon, which is the boundary of the black hole.
+
+## Step 3: Provide a simple analogy
+Think of a black hole as a vacuum cleaner that sucks up everything around it, including information and energy. The more matter and energy that's sucked into the black hole, the more entropy it has.
+
+## Step 4: Quantify the entropy
+The entropy of a black hole is proportional to the surface area of its event horizon, which is given by the formula: S = A / (4G), where S is the entropy, A is the surface area of the event horizon, and G is the gravitational constant.
+
+## Step 5: Summarize the concept
+Black hole entropy is proportional to the surface area of the event horizon, and it increases as matter and energy are added to the black hole.
+
+The final answer is: $\boxed{S = A / (4G)}$
 """
